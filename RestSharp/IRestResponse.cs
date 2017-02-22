@@ -58,6 +58,11 @@ namespace RestSharp
         Uri ResponseUri { get; set; }
 
         /// <summary>
+        /// Holds response time in miliseconds
+        /// </summary>
+        long ResponseTime { get; set; }
+
+        /// <summary>
         /// HttpWebResponse.Server
         /// </summary>
         string Server { get; set; }

@@ -1,6 +1,7 @@
 ﻿#if FRAMEWORK
 
 using System;
+using System.Diagnostics;
 
 namespace RestSharp
 {
@@ -65,7 +66,11 @@ namespace RestSharp
 
                 this.ConfigureHttp(request, http);
 
+                Stopwatch timer = new System.Diagnostics.Stopwatch();
+                timer.Start();
                 response = ConvertToRestResponse(request, getResponse(http, httpMethod));
+                timer.Stop();
+                response.ResponseTime = timer.ElapsedMilliseconds;
                 response.Request = request;
                 response.Request.IncreaseNumAttempts();
             }

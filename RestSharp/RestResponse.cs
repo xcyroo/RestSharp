@@ -96,6 +96,10 @@ namespace RestSharp
         public Uri ResponseUri { get; set; }
 
         /// <summary>
+        /// ResponseTime in miliseconds
+        /// </summary>
+        public long ResponseTime { get; set; }
+        /// <summary>
         /// HttpWebResponse.Server
         /// </summary>
         public string Server { get; set; }
